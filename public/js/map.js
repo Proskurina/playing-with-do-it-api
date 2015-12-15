@@ -1,8 +1,8 @@
-var connectedLink = "https://api.do-it.org/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2 ";
+// var connectedLink = "https://api.do-it.org/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2 ";
 
-$.getJSON(connectedLink, function showOps(data){
+$.getJSON('/data', function showOps(data){
 
-  organizations = data.data.items
+  var organizations = data.data
 
   var myLatlng = new google.maps.LatLng(51.567526, -0.182308);
   var mapOptions = {
@@ -13,9 +13,9 @@ $.getJSON(connectedLink, function showOps(data){
 
   for (i=0; i<organizations.length; i++){
     (function placeMarker (i){
-      lat = JSON.stringify(data.data.items[i].lat)
-      lng = JSON.stringify(data.data.items[i].lng)
-      title = JSON.stringify(data.data.items[i].title)
+      lat = JSON.stringify(organizations[i].lat)
+      lng = JSON.stringify(organizations[i].lng)
+      title = JSON.stringify(organizations[i].title)
 
       var myLatlng = new google.maps.LatLng(lat, lng);
 
@@ -28,3 +28,7 @@ $.getJSON(connectedLink, function showOps(data){
   };
 
 });
+
+// var org = organisations
+// console.log(organisations)
+// document.write(org)

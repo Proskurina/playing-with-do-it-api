@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Proskurina/playing-with-do-it-api",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "superagent": "0.14.6"
   }
 }

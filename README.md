@@ -12,6 +12,6 @@ Also I deployed it (master branch) to heroku:
 
 https://playing-with-do-it-api.herokuapp.com/
 
-There is a CORS issue, so it all works only when CORS are disabled.
+
 
 
