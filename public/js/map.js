@@ -1,4 +1,4 @@
-var connectedLink = "http://api.do-it.org/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2 ";
+var connectedLink = "https://api.do-it.org/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2 ";
 
 $.getJSON(connectedLink, function showOps(data){
 
