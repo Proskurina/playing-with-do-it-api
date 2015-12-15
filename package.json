@@ -1,0 +1,22 @@
+{
+  "name": "doit",
+  "version": "1.0.0",
+  "description": "I am exercising with Do-it API.  I find volunteer opportunities around particular location and place them on a map.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Proskurina/playing-with-do-it-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Proskurina/playing-with-do-it-api/issues"
+  },
+  "homepage": "https://github.com/Proskurina/playing-with-do-it-api",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
