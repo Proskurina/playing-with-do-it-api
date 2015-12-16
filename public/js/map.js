@@ -1,29 +1,29 @@
-var connectedLink = "https://api.do-it.org/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2 ";
-
-$.getJSON(connectedLink, function showOps(data){
-
-  organizations = data.data.items
-
-
-  function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-    }
+function getLocation() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+      console.log("Geolocation is not supported by this browser.");
   }
+}
 
-  function showPosition(position) {
-    myLat = position.coords.latitude
-    myLng = position.coords.longitude;
+function showPosition(position) {
+
+  myLat = position.coords.latitude
+  myLng = position.coords.longitude;
 
 
-    var myLatlng = new google.maps.LatLng(myLat, myLng);
-    var mapOptions = {
-      zoom: 12,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  var myLatlng = new google.maps.LatLng(myLat, myLng);
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  var connectedLink = "https://api.do-it.org/v1/opportunities\?lat\=" + myLat + "\&lng\=" + myLng + "\&miles\=2 ";
+
+  $.getJSON(connectedLink, function showOps(data){
+
+    organizations = data.data.items
 
     for (i=0; i<organizations.length; i++){
       (function placeMarker (i){
@@ -40,7 +40,7 @@ $.getJSON(connectedLink, function showOps(data){
         marker.setMap(map);
       })(i);
     };
-  };
+  });
+};
 
-  getLocation()
-});
+getLocation()
